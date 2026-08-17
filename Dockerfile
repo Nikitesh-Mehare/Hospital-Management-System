@@ -2,7 +2,7 @@
 # Build the WAR first in NetBeans: right-click project -> Clean and Build.
 # That produces dist/hms.war -- this Dockerfile just ships it.
 
-FROM tomcat:9.0-jdk17
+FROM tomcat:9.0-jdk21
 
 # Remove Tomcat's default sample apps
 RUN rm -rf /usr/local/tomcat/webapps/*
