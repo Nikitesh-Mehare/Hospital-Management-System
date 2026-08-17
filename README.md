@@ -130,10 +130,18 @@ This app is deployed as a Docker container running Tomcat 9, since JSP/Servlet a
 ## 📸 Screenshots
 ---
 ![Home Page](screenshots/homepage.png)
+
 ![Doctor Dahsborad](screenshots/doctordashboard.png)
+
 ![Patient Dashboard](screenshots/patientdashborad.png)
+
 ![Appointement by Patient](screenshots/appointments.png)
+
 ![Prescription by Doctor](screenshots/prescriptionbydoctor.png)
+
+![alt text](screenshots/doctorlogin.png)
+
+![alt text](screenshots/patientlogin.png)
 ---
 
 ## 👤 Author
