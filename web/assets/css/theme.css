@@ -1,0 +1,405 @@
+/* ===================================================================
+   HMS Theme — shared design system for Patient & Doctor modules
+   Load AFTER Bootstrap. Only visual layer — no logic here.
+=================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  /* -- Color tokens -- */
+  --ink:        #17242A;
+  --muted:      #5B6B70;
+  --bg:         #F3F8F6;
+  --surface:    #FFFFFF;
+  --border:     #E1E9E6;
+
+  --teal-900:   #0B3B36;   /* sidebar / deep surfaces */
+  --teal-700:   #0B5E56;   /* primary */
+  --teal-500:   #12897B;   /* primary hover / accents */
+  --teal-100:   #DCF0EA;   /* soft chips */
+
+  --amber-500:  #E2A34C;   /* CTA / warm accent */
+  --amber-100:  #FBEBD3;
+
+  --green-600:  #2F9E6E;   /* success / completed */
+  --red-500:    #D5573B;   /* danger / cancelled */
+  --blue-500:   #3E7CB1;   /* info / pending */
+
+  --radius-lg:  16px;
+  --radius-md:  10px;
+  --radius-sm:  8px;
+  --shadow-card: 0 6px 20px rgba(11, 59, 54, 0.08);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+h1,h2,h3,h4,h5,.brand,.page-title{
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+a{ color: var(--teal-700); }
+a:hover{ color: var(--teal-500); }
+
+/* ---------------------------------------------------------------
+   Auth pages (login / register) — centered card + ECG signature
+--------------------------------------------------------------- */
+.auth-wrap{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(1200px 400px at 50% -10%, var(--teal-100), transparent 60%),
+    var(--bg);
+}
+
+.auth-card{
+  width: 100%;
+  max-width: 460px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.auth-head{
+  background: var(--teal-900);
+  color: #fff;
+  padding: 28px 32px 20px;
+  position: relative;
+}
+
+.auth-head .brand{
+  color: #fff;
+  font-size: 1.05rem;
+  letter-spacing: .3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+}
+
+.auth-head h4{
+  color: #fff;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.auth-head .sub{
+  color: rgba(255,255,255,.7);
+  font-size: .85rem;
+  margin-top: 2px;
+}
+
+/* ECG "vitals" line — the one signature flourish, used sparingly */
+.vital-line{
+  width: 100%;
+  height: 22px;
+  display: block;
+  margin-top: 14px;
+  opacity: .55;
+}
+.vital-line path{
+  fill: none;
+  stroke: var(--amber-500);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.auth-body{ padding: 28px 32px 32px; }
+
+.form-label,.auth-body label{
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 6px;
+}
+
+.form-control{
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: .95rem;
+}
+.form-control:focus{
+  border-color: var(--teal-500);
+  box-shadow: 0 0 0 3px rgba(18,137,123,.15);
+}
+
+.btn-brand{
+  background: var(--teal-700);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 11px 18px;
+  transition: background .15s ease, transform .05s ease;
+}
+.btn-brand:hover{ background: var(--teal-500); color:#fff; }
+.btn-brand:active{ transform: translateY(1px); }
+
+.btn-amber{
+  background: var(--amber-500);
+  border: none;
+  color: #2A1B04;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+.btn-amber:hover{ background: #d4913a; color: #2A1B04; }
+
+.auth-foot{
+  text-align: center;
+  font-size: .87rem;
+  color: var(--muted);
+  margin-top: 18px;
+}
+
+/* ---------------------------------------------------------------
+   App shell — sidebar + topbar (dashboards, tables, forms)
+--------------------------------------------------------------- */
+.app-sidebar{
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 250px;
+  background: var(--teal-900);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.app-sidebar .brand{
+  color: #fff;
+  padding: 22px 22px 14px;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.app-sidebar .brand .dot{
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--amber-500);
+  box-shadow: 0 0 0 4px rgba(226,163,76,.2);
+}
+
+.app-sidebar .who{
+  padding: 16px 22px 6px;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: rgba(255,255,255,.55);
+}
+
+.app-sidebar .who strong{
+  display: block;
+  color: #fff;
+  font-size: .98rem;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+
+.app-sidebar nav{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 12px;
+}
+
+.app-sidebar nav a{
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  font-size: .92rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background .15s ease, color .15s ease;
+}
+
+.app-sidebar nav a:hover{
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.app-sidebar nav a.active{
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.app-sidebar .logout-link{
+  margin-top: auto;
+  padding: 14px 22px 22px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.app-sidebar .logout-link a{
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  font-size: .88rem;
+}
+.app-sidebar .logout-link a:hover{ color: #fff; }
+
+.app-content{
+  margin-left: 250px;
+  padding: 32px 34px 50px;
+  min-height: 100vh;
+}
+
+.app-topbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.app-topbar .eyebrow{
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--muted);
+  margin: 0 0 2px;
+}
+
+.app-topbar h2{
+  margin: 0;
+  font-size: 1.55rem;
+}
+
+/* ---------------------------------------------------------------
+   Cards, tables, badges — reused across every dashboard page
+--------------------------------------------------------------- */
+.panel{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.panel-head{
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-head h4{ margin: 0; font-size: 1.1rem; }
+.panel-body{ padding: 24px; }
+
+.table{ margin: 0; }
+.table thead th{
+  background: var(--teal-700);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+.table tbody td{
+  padding: 12px 16px;
+  vertical-align: middle;
+  border-color: var(--border);
+  font-size: .92rem;
+}
+.table tbody tr:hover{ background: var(--teal-100); }
+
+.badge-status{
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: .2px;
+}
+.badge-pending{   background: var(--amber-100); color: #8a5a12; }
+.badge-completed{ background: #DCF3E8; color: #1e7048; }
+.badge-cancelled{ background: #FBE1DB; color: #a8391f; }
+.badge-default{   background: var(--teal-100); color: var(--teal-700); }
+
+.btn-pill{
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  border: none;
+}
+.btn-pill-primary{ background: var(--teal-700); color: #fff; }
+.btn-pill-primary:hover{ background: var(--teal-500); color: #fff; }
+.btn-pill-success{ background: var(--green-600); color: #fff; }
+.btn-pill-success:hover{ background: #268a5e; color: #fff; }
+
+.empty-state{
+  text-align: center;
+  padding: 46px 20px;
+  color: var(--muted);
+}
+.empty-state .icon{ font-size: 2rem; margin-bottom: 8px; }
+
+.stat-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.stat-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-card);
+}
+.stat-card .label{
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--muted);
+}
+.stat-card .value{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--teal-700);
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------
+   Responsive
+--------------------------------------------------------------- */
+@media (max-width: 768px){
+  .app-sidebar{
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+  }
+  .app-sidebar nav{ flex-direction: row; flex-wrap: wrap; }
+  .app-sidebar .logout-link{ margin-top: 0; border-top: none; padding: 10px 22px; }
+  .app-content{ margin-left: 0; padding: 22px 16px 40px; }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS | Hospital Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <style>
+        .landing{
+            min-height: 100vh;
+            display:flex; align-items:center; justify-content:center;
+            background:
+              radial-gradient(1200px 500px at 50% -10%, var(--teal-100), transparent 60%),
+              var(--bg);
+            padding: 24px;
+        }
+        .landing-inner{ max-width: 720px; text-align:center; }
+        .landing .brand{
+            justify-content:center;
+            color: var(--teal-700);
+            font-weight:600;
+            margin-bottom: 10px;
+        }
+        .landing h1{ font-size: 2.4rem; margin-bottom: 10px; }
+        .landing p.lead{ color: var(--muted); margin-bottom: 30px; }
+        .portal-choice{
+            display:flex; gap:20px; justify-content:center; flex-wrap:wrap;
+        }
+        .portal-card{
+            width: 260px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            padding: 28px 22px;
+            text-decoration: none;
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .portal-card:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(11,59,54,.14);
+            text-decoration:none;
+        }
+        .portal-card .icon{ font-size: 2rem; margin-bottom: 10px; }
+        .portal-card h5{ margin: 0 0 6px; color: var(--ink); }
+        .portal-card p{ margin:0; color: var(--muted); font-size:.88rem; }
+    </style>
+</head>
+<body>
+
+<div class="landing">
+    <div class="landing-inner">
+
+        <p class="brand" style="display:flex;align-items:center;gap:8px;">
+            <span class="dot" style="width:9px;height:9px;border-radius:50%;background:var(--amber-500);display:inline-block;"></span>
+            Hospital Management System
+        </p>
+
+        <h1>Care, coordinated in one place.</h1>
+        <p class="lead">Book appointments, manage prescriptions, and keep patient records
+            organized &mdash; choose your portal to continue.</p>
+
+        <svg class="vital-line" viewBox="0 0 300 22" preserveAspectRatio="none" style="max-width:260px;margin:0 auto 30px;">
+            <path d="M0,11 L70,11 L82,2 L94,20 L106,11 L300,11"></path>
+        </svg>
+
+        <div class="portal-choice">
+            <a class="portal-card" href="patient/patient_login.jsp">
+                <div class="icon">&#129658;</div>
+                <h5>Patient Portal</h5>
+                <p>Book appointments &amp; view prescriptions</p>
+            </a>
+
+            <a class="portal-card" href="doctor/doctor_login.jsp">
+                <div class="icon">&#129658;&#8205;&#9877;&#65039;</div>
+                <h5>Doctor Portal</h5>
+                <p>Manage appointments &amp; prescriptions</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
