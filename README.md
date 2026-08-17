@@ -128,9 +128,12 @@ This app is deployed as a Docker container running Tomcat 9, since JSP/Servlet a
 ---
 
 ## 📸 Screenshots
-
-_Add screenshots of the patient dashboard, doctor dashboard, and booking flow here._
-
+---
+![Home Page](screenshots/homepage.png)
+![Doctor Dahsborad](screenshots/doctordashboard.png)
+![Patient Dashboard](screenshots/patientdashborad.png)
+![Appointement by Patient](screenshots/appointments.png)
+![Prescription by Doctor](screenshots/prescriptionbydoctor.png)
 ---
 
 ## 👤 Author
