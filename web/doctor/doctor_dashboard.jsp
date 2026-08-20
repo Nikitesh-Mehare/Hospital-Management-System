@@ -29,7 +29,7 @@
             <div class="brand"><span class="dot"></span> HMS Doctor</div>
             <div class="who">
                 Signed in as
-                <strong>Dr. <%= doctor_name %></strong>
+                <strong> <%= doctor_name %></strong>
             </div>
             <nav>
                 <a href="doctor_dashboard.jsp" class="active">&#8962;&nbsp; Dashboard</a>

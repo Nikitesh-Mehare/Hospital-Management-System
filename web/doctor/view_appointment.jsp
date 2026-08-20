@@ -23,7 +23,7 @@
         <div class="brand"><span class="dot"></span> HMS Doctor</div>
         <div class="who">
             Signed in as
-            <strong>Dr. <%= session.getAttribute("doctor_name") %></strong>
+            <strong><%= session.getAttribute("doctor_name") %></strong>
         </div>
         <nav>
             <a href="doctor_dashboard.jsp">&#8962;&nbsp; Dashboard</a>
