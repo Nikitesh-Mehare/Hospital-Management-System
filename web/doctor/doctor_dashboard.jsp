@@ -46,7 +46,7 @@
             <div class="app-topbar">
                 <div>
                     <p class="eyebrow">Doctor Portal</p>
-                    <h2>Hello, Dr. <%= doctor_name %> 👋</h2>
+                    <h2>Hello, <%= doctor_name %> 👋</h2>
                 </div>
             </div>
 
