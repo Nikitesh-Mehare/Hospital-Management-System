@@ -3,7 +3,8 @@
 A full-stack Hospital Management System built from scratch using **Core Java, JSP, Servlets, and JDBC**, following the **MVC architecture**. It supports two independent portals — **Patient** and **Doctor** — for appointment booking, doctor discovery, and prescription management.
 
 Live demo: https://hospital-management-system-5s12.onrender.com
-Repository: `https://github.com/Nikitesh-Mehare/Hospital-Management-System`
+
+Repository: https://github.com/Nikitesh-Mehare/Hospital-Management-System
 
 ---
 
